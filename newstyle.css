@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+#nav{
+    height: 80px;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+#nav-part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.gola{
+    height: 22px;
+    width: 22px;
+    background-color: black;
+    border-radius: 50%;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+#nav-part2 h4{
+    font-size: 16px;
+    font-weight: 600;
+
+}
+#nav-part2 h4 span{
+    color: rgb(71, 71, 71);
+    margin-left:15px ;
+}
+#nav-part2 h5{
+    display: none;
+}
+#nav2{
+    height: 70px;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    gap: 100px;
+}
+#nav2 h3{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+#content{
+    width: 100%;
+    /* calc is a tool for arithmetic operation */
+    height: calc(100% - 150px);
+    /* background-color: aquamarine; */
+}
+#text-content{
+    height: 40%;
+    width: 100%;
+    /* background-color: burlywood; */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+/* jiske pass scroll bar hai usse target krte hue apn::-webkit-scrollbaar 
+yeh likhr kr scroll bar ko target kr sakte hai*/
+#text-content::-webkit-scrollbar{
+    background-color: transparent;
+    height: 7px;
+    
+}
+#text-content::-webkit-scrollbar-thumb{
+    
+    background-color: orange;
+}
+/* flex-wrap = nowrap is the property ki jo bataye ki bhai jo aapka flex usse
+aap wrap nhi krengeee
+flex-shrink= woh bol rhi hai single elem ko shring 0 krdo mtlb uska jitna shrink hai usse 0 krdo
+and then overflow-x:auto = yeh jo niche ka scroll baar hai woh sirf ussi justify div ke liye use kro
+ */
+.elem{
+    flex-shrink: 0;
+    height: 100%;
+    width: 50%;
+    /* background-color: red;
+    border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.elem h1{
+    /* font-size: 130px; */
+    font-size: 7vw;
+    font-weight: 300;
+}
+#image-content{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+
+}
+#image-content::-webkit-scrollbar{
+    display: none;
+    
+}
+#image-content img{
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width:600px){
+    #nav{
+        height: 70px;
+        padding: 0 25px;
+    }
+    
+    .gola{
+        height: 16px;
+        width: 16px;
+    }
+    #nav-part2{
+        align-items: center;
+        gap: 30px;
+    }
+    #nav-part2 h4{
+        display: none;
+        font-size: 15px;
+        font-weight: 600;
+    
+    }
+    #nav-part2 h4:nth-child(1){
+        display: initial;
+        margin-right:10px;
+    }
+    #nav-part2 h4 span{
+        color: rgb(86, 79, 79);
+        margin-left:10px ;
+    }
+    #nav-part2 h5{
+        display: initial;
+    }
+    #nav-part2 h5 i{
+        font-size: 20px;
+    }
+    #nav2{
+        height:65px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    #nav2 h3{
+        font-size: 2vw;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #4e4545;
+    }
+    #content{
+        width: 100%;
+        
+        height: calc(100% - 135px);
+        
+    }
+    #text-content{
+        height: 30%;
+        width: 100%;
+        
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    #text-content::-webkit-scrollbar{
+        background-color: transparent;
+        height: 4px;
+        
+    }
+    #text-content::-webkit-scrollbar-thumb{
+        
+        background-color: orange;
+    }
+    
+    .elem{
+        flex-shrink: 0;
+        height: 100%;
+        width: fit-content;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    .elem h1{
+        white-space: nowrap;
+        font-size: 14vw;
+        font-weight: 300;
+    }
+    #image-content{
+        height: 70%;
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+    
+    }
+    #image-content::-webkit-scrollbar{
+        display: none;
+        
+    }
+    #image-content img{
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
